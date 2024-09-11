@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function yearsToDays(years) 
+        {
+            return years * 365;
+        }
+        
+        function daysToYears(days) 
+        {
+            return days / 365;
+        }
+
+        let yearsInput = prompt("Enter number of years:");
+        let years = parseFloat(yearsInput);
+        let days = yearsToDays(years);
+
+        document.write(years + " years is equal to " + days + " days.");
+        document.write("<br>");
+    
+        let daysInput = prompt("Enter number of days:");
+        let daysCount = parseFloat(daysInput);
+        let yearsConverted = daysToYears(daysCount);
+
+        // document.write(daysCount + " days is equal to  " + yearsConverted + " years.");
+        document.write(`${daysCount} days is equal to ${yearsConverted} years.`);
+    </script>
+</body>
+
+</html>

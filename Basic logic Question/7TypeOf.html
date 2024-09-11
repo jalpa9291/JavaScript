@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = '10';
+        let num = 10;
+
+        if (typeof str === typeof num && str === num) 
+        {
+            document.write("They are exactly equal.")
+        } 
+        else 
+        {
+            str = Number(str);
+
+            if (typeof str === typeof num && str === num) 
+            {
+                document.write("They are now exactly equal.")
+            } 
+            else 
+            {
+                document.write("They are not exactly equal.")
+            }
+        }
+    </script>
+</body>
+</html>

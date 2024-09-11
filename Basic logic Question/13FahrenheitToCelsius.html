@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fahrenheitToCelsius(fahrenheit) 
+        {
+           return (fahrenheit - 32) * 5 / 9;
+        }
+
+        let fahrenheitInput = prompt("Enter temperature in Fahrenheit:");
+        let fahrenheit = parseFloat(fahrenheitInput);
+        let celsius = fahrenheitToCelsius(fahrenheit);
+
+        document.write(fahrenheit + "°F is equal to " + celsius.toFixed(2) + "°C.");
+    </script>
+</body>
+</html>
