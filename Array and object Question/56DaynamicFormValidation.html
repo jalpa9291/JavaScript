@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+
+        .valid {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span id="emailError" class="error"></span><br><br>
+
+        <label for="number">Number:</label>
+        <input type="number" id="number" name="number" required>
+        <span id="numberError" class="error"></span><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <span id="passwordError" class="error"></span><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('myForm');
+
+            form.email.addEventListener('input', function () {
+                validateEmail();
+            });
+
+            form.number.addEventListener('input', function () {
+                validateNumber();
+            });
+
+            form.password.addEventListener('input', function () {
+                validatePassword();
+            });
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                if (validateForm()) {
+                    alert('Form submitted successfully!');
+                    // Here you can add code to submit form data via AJAX or other methods
+                }
+            });
+
+            function validateEmail() {
+                const email = form.email.value;
+                const emailError = document.getElementById('emailError');
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    emailError.textContent = 'Please enter a valid email address.';
+                    emailError.classList.remove('valid');
+                    emailError.classList.add('error');
+                    return false;
+                }
+                else {
+                    emailError.textContent = 'Valid email address.';
+                    emailError.classList.remove('error');
+                    emailError.classList.add('valid');
+                    return true;
+                }
+            }
+            function validateNumber() {
+                const number = form.number.value;
+                const numberError = document.getElementById('numberError');
+                if (isNaN(number) || number === '') {
+                    numberError.textContent = 'Please enter a valid number.';
+                    numberError.classList.remove('valid');
+                    numberError.classList.add('error');
+                    return false;
+                }
+                else {
+                    numberError.textContent = 'Valid number.';
+                    numberError.classList.remove('error');
+                    numberError.classList.add('valid');
+                    return true;
+                }
+            }
+
+            function validatePassword() {
+                const password = form.password.value;
+                const passwordError = document.getElementById('passwordError');
+                if (password.length < 6) {
+                    passwordError.textContent = 'Password must be at least 6 characters long.';
+                    passwordError.classList.remove('valid');
+                    passwordError.classList.add('error');
+                    return false;
+                }
+                else {
+                    passwordError.textContent = 'Valid password.';
+                    passwordError.classList.remove('error');
+                    passwordError.classList.add('valid');
+                    return true;
+                }
+            }
+
+            function validateForm() {
+                return validateEmail() && validateNumber() && validatePassword();
+            }
+        });
+    </script>
+</body>
+</html>

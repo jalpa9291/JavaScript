@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span id="emailError" class="error"></span><br><br>
+
+        <label for="number">Number:</label>
+        <input type="number" id="number" name="number" required>
+        <span id="numberError" class="error"></span><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <span id="passwordError" class="error"></span><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('numberError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+
+            const email = document.getElementById('email').value;
+            const number = document.getElementById('number').value;
+            const password = document.getElementById('password').value;
+
+            let isValid = true;
+
+            // Email validation
+            if (!validateEmail(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+                isValid = false;
+            }
+            // Number validation
+            if (!validateNumber(number)) {
+                document.getElementById('numberError').textContent = 'Please enter a valid number.';
+                isValid = false;
+            }
+            // Password validation
+            if (!validatePassword(password)) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+                // Here you can add code to submit form data via AJAX or other methods
+            }
+        });
+
+        function validateEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+
+        function validateNumber(number) {
+            return !isNaN(number) && number !== '';
+        }
+
+        function validatePassword(password) {
+            return password.length >= 6;
+        }
+    </script>
+</body>
+</html>
