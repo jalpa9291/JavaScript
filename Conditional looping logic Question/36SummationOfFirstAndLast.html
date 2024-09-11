@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number = parseInt (prompt("Enter Number Series :"));
+
+        let numStr = number.toString();
+        let firstDigit, lastDigit;
+
+        for (let i = 0; i < numStr.length; i++) 
+        {
+            if (i === 0) 
+            {
+                firstDigit = parseInt(numStr.charAt(i));
+            }
+            if (i === numStr.length - 1) 
+            {
+                lastDigit = parseInt(numStr.charAt(i));
+            }
+        }
+        let sum = firstDigit + lastDigit;
+
+        document.write("The summation of the first and last digit is: " + sum);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        function isPalindrome(number) 
+        {
+            let str=number.toString();
+            let reversedStr=str.split('').reverse().join('');
+            return str===reversedStr;
+        }
+
+        let numbers=[];
+        let count=0;
+
+        while (count < 3) 
+        {
+            let input=prompt("Enter a number:");
+            let num=parseInt(input, 10);
+
+            if ( !isNaN(num)) 
+            {
+                numbers.push(num);
+                count++;
+            }
+            else 
+            {
+                alert("Please enter a valid number.");
+            }
+        }
+
+        for (let i=0; i < numbers.length; i++) 
+        {
+            if (isPalindrome(numbers[i])) 
+            {
+                document.write(`${numbers[i]} is a palindrome.`);
+                document.write("<br>");
+            }
+            else 
+            {
+                document.write(`${numbers[i]} is not a palindrome.`);
+                document.write("<br>");
+            }
+        }
+    </script>
+</body>
+</html>
