@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+        .box {
+            height: 700px;
+            width: 800px;
+            border: 2px solid black;
+            margin: 30px 300px;
+            padding: 10px;
+            /* text-align: center; */
+        }
+        .box h1{
+            text-align: center;
+        }
+        .box p{
+            /* padding-top: 20px;
+            margin-left:200px ; */
+            margin-top: 25px; 
+            padding-left: 450px; 
+            background-color: aquamarine;         
+        }
+        .data {
+            /* margin: 20px auto;
+            padding: 20px;
+            text-align: left; */
+            /* display: flex;
+            flex-direction: column; */
+            background-color: aquamarine;
+        }
+        .data input {
+            height: 10px;
+            width: 30%;
+            margin-left: 240px;
+            /* padding-left: 5px; */
+            justify-content: right;
+            text-align: right;
+            align-items: end;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Marksheet of Information Technology</h1>
+        <p>Enter marks</p>
+        <table>
+            <tr>
+                <td>1. C language</td>
+                <td><input type="number" name="" id="C"></td> 
+            </tr><br>
+            <tr>
+                <td>2. C++ language</td>
+                <td><input type="number" name="" id="Cplus"></td>
+            </tr>
+            <tr>
+                <td>3. database</td>
+                <td><input type="number" name="" id="database"></td>
+            </tr>
+            <tr>
+                <td>4. HTML</td>
+                <td><input type="number" name="" id="html"></td>
+            </tr>
+            <tr>
+                <td>5. CSS</td>
+                <td><input type="number" name="" id="css"></td>
+            </tr>
+            <tr>
+                <td>6. php</td>
+                <td><input type="number" name="" id="php"></td>
+            </tr>
+            <tr>
+                <td>7. Core java</td>
+                <td><input type="number" name="" id="java"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><button id="result" onclick="add_value()">result</button></td>
+            </tr>
+            <tr>
+                <td align="right">Total is <b id="total">0</b>/350</td>
+                <td align="center">Percentage is <b id="pr">0</b>%</td>
+            </tr>
+        </table>
+        <!-- <div class="data">
+            <label for="">1. C language</label>
+            <input type="number" id="no1"><br><br>
+            <label for="">2. C++ language</label>
+            <input type="number" id="no2"><br><br>
+            <label for="">3. Database</label>
+            <input type="number" id="no2"><br><br>
+            <label for="">4. HTML</label>
+            <input type="number" id="no2"><br><br>
+            <label for="">5. CSS</label>
+            <input type="number" id="no2"><br><br>
+            <label for="">6. Php</label>
+            <input type="number" id="no2"><br><br>
+            <label for="">7. Core java</label>
+            <input type="number" id="no2">
+        </div> -->
+        <button id="result" onclick="add_value()">result</button>
+
+        <p>Total is : <span id="total">0</span> / 350</p>
+        <p>Percentage is : <span id="per">0</span> %</p>
+
+    </div>
+</body>
+
+</html>
