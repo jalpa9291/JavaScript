@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+        .box {
+            height: 500px;
+            width: 700px;
+            border: 2px solid black;
+            margin: 50px auto;
+            padding: 30px;
+        }
+        .box h1 {
+            text-align: center;
+        }
+        .box p {
+            margin-top: 25px;
+            text-align: center;
+        }
+        .data input {
+            height: 30px;
+            width: 50%;
+            margin-left: 230px;
+        }
+        #result {
+            margin-top: 10px;
+            margin-left: 250px;
+            width: 20%;
+            margin-bottom: 20px;
+        }
+        b {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Marksheet of Information Technology</h1>
+        <p>Enter marks</p>
+        <table class="data">
+            <tr>
+                <td>1. C language</td>
+                <td><input type="number" name="" id="C"></td>
+            </tr><br>
+            <tr>
+                <td>2. C++ language</td>
+                <td><input type="number" name="" id="Cplus"></td>
+            </tr>
+            <tr>
+                <td>3. database</td>
+                <td><input type="number" name="" id="database"></td>
+            </tr>
+            <tr>
+                <td>4. HTML</td>
+                <td><input type="number" name="" id="html"></td>
+            </tr>
+            <tr>
+                <td>5. CSS</td>
+                <td><input type="number" name="" id="css"></td>
+            </tr>
+            <tr>
+                <td>6. php</td>
+                <td><input type="number" name="" id="php"></td>
+            </tr>
+            <tr>
+                <td>7. Core java</td>
+                <td><input type="number" name="" id="java"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button id="result" onclick="add_value()">Result</button>
+                </td>
+            </tr>
+            <tr class="cal">
+                <td align="center">Total is <b id="total">0</b>/350</td>
+                <td align="center">Percentage is <b id="pr">0</b>%</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function add_value() 
+        {
+            let c_lan = document.getElementById("C").value;
+            let cplus_lan = document.getElementById("Cplus").value;
+            let database = document.getElementById("database").value;
+            let html = document.getElementById("html").value;
+            let css = document.getElementById("css").value;
+            let php = document.getElementById("php").value;
+            let java = document.getElementById("java").value;
+            let total;
+
+            total = document.getElementById("total").innerHTML = Number(c_lan) + Number(cplus_lan) + Number(database) + Number(html) + Number(css) + Number(php) + Number(java);
+            pr = document.getElementById("pr").innerHTML = Number(total / 350) * 100;
+        }   
+    </script>
+</body>
+</html>
