@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: 25px;
+        }
+        .box {
+            height: 400px;
+            width: 800px;
+            border: 2px solid black;
+            margin: 100px 250px;
+            padding: 20px;
+            text-align: center;
+        }
+        .data {
+            margin: 20px auto;
+            padding: 20px;
+            text-align: left;
+        }
+        .data input {
+            height: 40px;
+            width: 40%;
+            margin-left: 140px;
+            padding-left: 2px;
+        }
+        .data1 {
+            padding: 20px;
+            width: 100%;
+            text-align: left;
+        }
+        button {
+            width: 60px;
+            height: 50px;
+            margin: 5px 2px;
+        }
+        #ans {
+            text-align: center;
+        }
+        span {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Maths Operations</h2>
+            <div class="data">
+                <label for="">Enter 1st number :</label>
+                <input type="number" id="no1"> <br> <br>
+                <label for="">Enter 2ed number :</label>
+                <input type="number" id="no2">
+            </div>
+            <table class="data1">
+                <tr>
+                    <td>
+                        <button onclick="add()">+</button>
+                        <button onclick="sub()">-</button>
+                        <button onclick="mul()">*</button>
+                    <td rowspan="2" id="ans">Answer is : <span id="result">0</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="div()">/</button>
+                        <button onclick="mod()">%</button>
+                    </td>
+                </tr>
+            </table>
+    </div>
+    <script>
+        let n1 = document.querySelector("#no1");
+        let n2 = document.querySelector("#no2");
+
+        function add() {
+            let result = Number(n1.value) + Number(n2.value);
+            document.querySelector("#result").innerHTML = result;
+        }
+        function sub() {
+            let result = Number(n1.value) - Number(n2.value);
+            document.querySelector("#result").innerHTML = result;
+        }
+        function mul() {
+            let result = Number(n1.value) * Number(n2.value);
+            document.querySelector("#result").innerHTML = result;
+        }
+        function div() {
+            let result = Number(n1.value) / Number(n2.value);
+            document.querySelector("#result").innerHTML = result;
+        }
+        function mod() {
+            let result = Number(n1.value) % Number(n2.value);
+            document.querySelector("#result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
